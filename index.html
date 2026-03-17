@@ -1,256 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chhavi Industries | Premium Ink Manufacturer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Chhavi Industries - Premium Manufacturer of Flexographic, Rotogravure and Lamination Inks.">
+  <title>Chhavi Industries</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  <!-- CSS Styles -->
+  <style>
+    /* ================= Smooth scroll */
+    html {
+      scroll-behavior: smooth;
+    }
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-}
+    /* ================= Reset and body */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #ffffff;
+      color: #333;
+    }
 
-body {
-    background: #ffffff;
-    color: #222;
-}
+    /* ================= Header / Navbar */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #0e7c7b; /* sea green */
+      color: white;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+    }
+    header .logo img {
+      height: 50px;
+    }
+    header nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    header nav a:hover {
+      color: #ffd700;
+    }
 
-/* HEADER */
-header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 50px;
-    z-index: 1000;
-}
+    /* ================= Hero Banner */
+    .hero {
+      background: linear-gradient(rgba(14,124,123,0.7), rgba(14,124,123,0.7)), url('banner.webp') center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      animation: fadeIn 2.5s ease-in-out;
+    }
+    .hero a.btn {
+      padding: 12px 25px;
+      margin: 5px;
+      background: #ffd700; /* gold */
+      color: #0e7c7b;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: 0.3s;
+      position: relative;
+      z-index: 10;
+    }
+    .hero a.btn:hover {
+      background: #fff;
+      color: #0e7c7b;
+      transform: translateY(-3px);
+    }
 
-header img {
-    height: 60px;
-}
+    /* ================= Sections */
+    section {
+      padding: 80px 50px;
+      max-width: 1200px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s forwards;
+    }
+    section:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    section:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+    h2.section-title {
+      font-size: 2.5em;
+      color: #0e7c7b;
+      text-align: center;
+      margin-bottom: 50px;
+    }
 
-nav a {
-    color: white;
-    margin-left: 25px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.3s;
-}
+    /* ================= Products Grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .product-box {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      background: #f5f5f5;
+      transition: 0.3s;
+    }
+    .product-box img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: 0.3s;
+    }
+    .product-box:hover img {
+      transform: scale(1.05);
+    }
+    .product-box h3 {
+      padding: 15px;
+      color: #0e7c7b;
+    }
 
-nav a:hover {
-    color: #FFC107;
-}
+    /* ================= Contact Section */
+    #contact {
+      background: #e0f7f7;
+      text-align: center;
+      border-radius: 10px;
+    }
+    #contact p {
+      margin: 10px 0;
+      font-size: 1.1em;
+    }
 
-/* HERO */
-.hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                url('assets/images/banner.jpg') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-}
+    /* ================= WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      text-align: center;
+      font-size: 30px;
+      line-height: 60px;
+      z-index: 1000;
+      transition: 0.3s;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
 
-.hero h1 {
-    font-size: 55px;
-    margin-bottom: 20px;
-}
+    /* ================= Animations */
+    @keyframes fadeIn {
+      from {opacity:0;}
+      to {opacity:1;}
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-.hero p {
-    font-size: 20px;
-    margin-bottom: 30px;
-}
-
-.btn {
-    padding: 12px 25px;
-    background: #FFC107;
-    color: black;
-    border: none;
-    margin: 10px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: white;
-}
-
-/* SECTION */
-section {
-    padding: 80px 50px;
-    text-align: center;
-}
-
-.section-title {
-    font-size: 35px;
-    margin-bottom: 20px;
-}
-
-.section-sub {
-    color: gray;
-    margin-bottom: 50px;
-}
-
-/* PRODUCTS */
-.products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.card {
-    background: #fff;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    transition: 0.4s;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-}
-
-.card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.card h3 {
-    padding: 15px;
-}
-
-.card p {
-    padding: 0 15px 20px;
-    color: #555;
-}
-
-/* WHY US */
-.why {
-    background: #f5f5f5;
-}
-
-.why-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-    gap: 30px;
-}
-
-.why-box {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-.why-box:hover {
-    background: #00529B;
-    color: white;
-}
-
-/* FOOTER */
-footer {
-    background: #111;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-</style>
+    /* ================= Responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+      }
+      .hero h1 {
+        font-size: 2em;
+      }
+      .hero p {
+        font-size: 1em;
+      }
+      header nav a {
+        margin: 10px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
-    <img src="assets/images/logo.png" alt="Logo">
+  <!-- ================= Header / Navbar -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Chhavi Industries">
+    </div>
     <nav>
-        <a href="#">Home</a>
-        <a href="#products">Products</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+      <a href="#products">Our Products</a>
+      <a href="#contact">Contact Us</a>
     </nav>
-</header>
+  </header>
 
-<div class="hero">
+  <!-- ================= Hero Banner -->
+  <div class="hero">
     <div>
-        <h1>Innovating Inks for the Future</h1>
-        <p>Premium Manufacturer of Flexographic & Rotogravure Inks</p>
-        <button class="btn">Our Products</button>
-        <button class="btn">Contact Us</button>
+      <h1>Innovating Inks for the Future</h1>
+      <p>Premium Manufacturer of Flexographic, Rotogravure & Lamination Inks</p>
+      <a href="#products" class="btn">Our Products</a>
+      <a href="#contact" class="btn">Contact Us</a>
     </div>
-</div>
+  </div>
 
-<section id="about">
-    <h2 class="section-title">About Chhavi Industries</h2>
-    <p class="section-sub">
-        Leading manufacturer of water-based and solvent-based printing inks,
-        delivering high-quality, eco-friendly and performance-driven solutions.
-    </p>
-</section>
-
-<section id="products">
+  <!-- ================= Products Section -->
+  <section id="products">
     <h2 class="section-title">Our Products</h2>
-
-    <div class="products">
-
-        <div class="card">
-            <img src="assets/images/water-ink.jpg">
-            <h3>Water-Based Flexographic Ink</h3>
-            <p>Eco-friendly, high-performance inks for packaging.</p>
-        </div>
-
-        <div class="card">
-            <img src="assets/images/solvent-ink.jpg">
-            <h3>Solvent-Based Flexographic Ink</h3>
-            <p>Excellent adhesion and fast drying solutions.</p>
-        </div>
-
-        <div class="card">
-            <img src="assets/images/rotogravure.jpg">
-            <h3>Rotogravure Ink</h3>
-            <p>Premium printing quality for flexible packaging.</p>
-        </div>
-
-        <div class="card">
-            <img src="assets/images/lamination.jpg">
-            <h3>Lamination Ink</h3>
-            <p>Strong bonding and high durability inks.</p>
-        </div>
-
-        <div class="card">
-            <img src="assets/images/corrugated.jpg">
-            <h3>Corrugated Box Ink</h3>
-            <p>Specialized inks for corrugated packaging industry.</p>
-        </div>
-
+    <div class="products-grid">
+      <div class="product-box">
+        <img src="product1.webp" alt="Flexographic Inks">
+        <h3>Flexographic Inks</h3>
+      </div>
+      <div class="product-box">
+        <img src="product2.webp" alt="Rotogravure Inks">
+        <h3>Rotogravure Inks</h3>
+      </div>
+      <div class="product-box">
+        <img src="product3.webp" alt="Lamination Inks">
+        <h3>Lamination Inks</h3>
+      </div>
+      <div class="product-box">
+        <img src="product4.webp" alt="CPO Inks">
+        <h3>CPO Inks</h3>
+      </div>
     </div>
-</section>
+  </section>
 
-<section class="why">
-    <h2 class="section-title">Why Choose Us</h2>
+  <!-- ================= Contact Section -->
+  <section id="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <p><strong>Chhavi Industries</strong></p>
+    <p>Panipat, Haryana, India</p>
+    <p><strong>Phone:</strong> +91 8572025077</p>
+    <p><strong>Email:</strong> chhavi.ind2026@gmail.com</p>
+  </section>
 
-    <div class="why-grid">
-        <div class="why-box">High Quality Standards</div>
-        <div class="why-box">Eco-Friendly Solutions</div>
-        <div class="why-box">Advanced Technology</div>
-        <div class="why-box">Customer Satisfaction</div>
-    </div>
-</section>
-
-<footer>
-    <p>© 2026 Chhavi Industries | All Rights Reserved</p>
-</footer>
+  <!-- ================= WhatsApp Floating Button -->
+  <a href="https://wa.me/918572025077" target="_blank" class="whatsapp-float">💬</a>
 
 </body>
 </html>
